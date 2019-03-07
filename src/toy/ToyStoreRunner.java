@@ -14,11 +14,14 @@ public class ToyStoreRunner
 	public static void main( String args[] )
 	{
             ToyStore hi = new ToyStore();
-            System.out.println(hi);
+            System.out.println(hi.toString());
             
             hi.sortToysByCount();
+            System.out.println(hi.toString());
             
-            //System.out.println(hi.toString());
+            System.out.println("");
+            System.out.println(hi.getMostFrequentToy());
+            //System.out.println(hi.toString());s
             
 	}
 }

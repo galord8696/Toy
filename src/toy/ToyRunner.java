@@ -10,6 +10,7 @@ public class ToyRunner
 {
 	public static void main(String[] args)
 	{
+            /*
             Toy dekel = new Toy("Dekel");
             dekel.setCount(20);
             
@@ -21,7 +22,7 @@ public class ToyRunner
             
             Toy leo = new Toy("Dekel");
             dekel.setCount(30);
-            
+            */
             
 	}
 }

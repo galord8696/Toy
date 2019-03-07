@@ -12,27 +12,26 @@ import static java.lang.System.*;
 
 public class ToyStore
 {
-	private ArrayList<Toy> toyList;
+	private ArrayList<Toy> toyList = new ArrayList<>();
 
 	public ToyStore()
-	{
-            Toy dekel = new Toy("Dekel");
-            dekel.setCount(20);
+	{         
+            Toy dekel = new Toy("dekel", 20);
+            toyList.add(dekel);
             
-            Toy gary = new Toy("Dekel");
-            dekel.setCount(10);
+            Toy gary = new Toy("gary",10);
+            toyList.add(gary);
             
-            Toy jack = new Toy("Dekel");
-            dekel.setCount(40);
+            Toy jack = new Toy("jack",40);
+            toyList.add(jack);
             
-            Toy leo = new Toy("Dekel");
-            dekel.setCount(30);
+            Toy leo = new Toy("leo",30);
+            toyList.add(leo);
 	}
 
-	public void loadToys( String toys )
+	public void loadToys( Toy toys )
 	{
-            Toy t = new Toy(toys);
-            toyList.add(t);
+            toyList.add(toys);
 	}
   
   	public Toy getThatToy( String nm )
@@ -57,28 +56,34 @@ public class ToyStore
   
   	public void sortToysByCount()
   	{           
-            List<Toy> out = new ArrayList<Toy>(toyList.size());
-            int ind = 0;
+            List<Toy> out = new ArrayList<>(toyList.size());
+            for (Toy n: toyList){
+                out.add(n);
+            }
+            int ind;
+            
+            
             for (Toy num: toyList){
-                for (int i = 0; i<toyList.size() ;i++){
-                    ind = toyList.size()-1;
+                ind = toyList.size()-1;
+                for (int i = 0; i<toyList.size(); i++){
                     if (num.getCount() > toyList.get(i).getCount()){
                         ind--;
                     }
-                    out.set(ind, toyList.get(i));
                 }
+                out.set(ind, num);
             }
             toyList.clear();
             toyList.addAll(out);
   	}  
   	  
 
+        @Override
 	public String toString()
 	{
-            String st = "";
-            
+            String st = " ";
             for (Toy x: toyList){
                 st = st + x.getName() + " " + x.getCount() + ", ";
+                
             }
             
 	   return st;

@@ -21,6 +21,12 @@ public class Toy
 	{
             name = nm;
 	}
+        
+        public Toy( String nm, int ct)
+	{
+            name = nm;
+            count = ct;
+	}
 	
 	public int getCount()
 	{
